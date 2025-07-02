@@ -116,16 +116,20 @@ const ComingPatientPage = () => {
   };
 
   return (
-    <Box p={6}>
-      <Heading size="lg" mb={4} color="blue.500">
+    <Box p={[2, 4, 6]}>
+      <Heading size="lg" mb={[2, 4]} color="blue.500">
         Coming Patient
       </Heading>
-      <Button colorScheme="blue" mb={4} onClick={() => setShowForm((v) => !v)}>
+      <Button
+        colorScheme="blue"
+        mb={[2, 4]}
+        onClick={() => setShowForm((v) => !v)}
+      >
         {showForm ? "Cancel" : "Add New Patient"}
       </Button>
       {showForm && (
-        <Box as="form" mb={6} onSubmit={handleAddPatient}>
-          <HStack spacing={4} align="end">
+        <Box as="form" mb={[4, 6]} onSubmit={handleAddPatient}>
+          <HStack spacing={[2, 4]} align="end" flexWrap="wrap">
             <FormControl isInvalid={!!errors.name} isRequired>
               <FormLabel>Name</FormLabel>
               <Input
@@ -151,17 +155,17 @@ const ComingPatientPage = () => {
           </HStack>
         </Box>
       )}
-      <List spacing={4}>
+      <List spacing={[2, 4]}>
         {patients.map((patient) => (
           <ListItem
             key={patient.id}
-            p={4}
+            p={[2, 4]}
             bg="white"
             _dark={{ bg: "gray.700" }}
             borderRadius="md"
             boxShadow="sm"
           >
-            <HStack spacing={4}>
+            <HStack spacing={[2, 4]} flexWrap="wrap">
               <Avatar name={patient.name} />
               <VStack align="start" spacing={1} flex={1}>
                 <Text fontWeight="bold">{patient.name}</Text>

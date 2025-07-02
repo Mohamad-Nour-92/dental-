@@ -36,21 +36,21 @@ const AwaitingPatientPage = () => {
   };
 
   return (
-    <Box p={6}>
-      <Heading size="lg" mb={4} color="yellow.500">
+    <Box p={[2, 4, 6]}>
+      <Heading size="lg" mb={[2, 4]} color="yellow.500">
         Awaiting Patient
       </Heading>
-      <List spacing={4}>
+      <List spacing={[2, 4]}>
         {awaitingPatients.map((patient) => (
           <ListItem
             key={patient.id}
-            p={4}
+            p={[2, 4]}
             bg="white"
             _dark={{ bg: "gray.700" }}
             borderRadius="md"
             boxShadow="sm"
           >
-            <HStack spacing={4}>
+            <HStack spacing={[2, 4]} flexWrap="wrap">
               <Avatar name={patient.name} />
               <VStack align="start" spacing={1} flex={1}>
                 <Text fontWeight="bold">{patient.name}</Text>

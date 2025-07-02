@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import NavBar from "./components/navBar";
 import Sidebar from "./components/Sidebar";
 import CurrentPatientView from "./components/CurrentPatientView";
@@ -10,12 +10,17 @@ function Layout() {
   return (
     <Box width="100%" minHeight="100vh">
       <NavBar />
-      <HStack align="flex-start" spacing={0}>
+      <Stack
+        direction={["column", "row"]}
+        align="flex-start"
+        spacing={0}
+        width="100%"
+      >
         <Sidebar />
-        <Box flex={1}>
+        <Box flex={1} width="100%">
           <Outlet />
         </Box>
-      </HStack>
+      </Stack>
     </Box>
   );
 }

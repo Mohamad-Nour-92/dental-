@@ -11,6 +11,7 @@ import {
   Avatar,
   Divider,
   Icon,
+  Stack,
 } from "@chakra-ui/react";
 import { FaClock, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { useCurrentPatient } from "../context/CurrentPatientHelpers";
@@ -19,10 +20,15 @@ const CurrentPatientView = () => {
   const { currentPatient } = useCurrentPatient();
 
   return (
-    <Box p={6}>
-      <VStack spacing={6} align="stretch">
+    <Box p={{ base: 2, md: 4, lg: 6 }}>
+      <VStack spacing={{ base: 4, md: 6 }} align="stretch">
         {/* Header */}
-        <HStack justify="space-between" align="center">
+        <HStack
+          justify="space-between"
+          width="100%"
+          flexDirection={["column", "row"]}
+          spacing={[2, 4]}
+        >
           <VStack align="start" spacing={1}>
             <Heading size="lg">Current Patient</Heading>
             <Text color="gray.600">Active treatment session</Text>
@@ -73,7 +79,13 @@ const CurrentPatientView = () => {
         </Card>
 
         {/* Treatment Details */}
-        <Grid templateColumns="repeat(auto-fit, minmax(300px, 1fr))" gap={6}>
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            md: "repeat(auto-fit, minmax(300px, 1fr))",
+          }}
+          gap={{ base: 4, md: 6 }}
+        >
           {/* Vital Signs */}
           <Card>
             <CardBody>

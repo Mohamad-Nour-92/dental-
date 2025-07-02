@@ -17,12 +17,13 @@ const Sidebar = () => {
 
   return (
     <Box
-      width="300px"
-      bg={bgColor}
-      p={6}
-      height="100vh"
-      borderRight="1px solid"
+      width={["100%", "250px", "300px"]}
+      minWidth={["100%", "250px", "300px"]}
+      p={[2, 4, 6]}
+      height={["auto", "100vh"]}
+      borderRight={["none", "1px solid"]}
       borderColor={borderColor}
+      bg={bgColor}
       overflowY="auto"
     >
       <VStack spacing={6} align="stretch">
